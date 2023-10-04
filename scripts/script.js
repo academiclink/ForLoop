@@ -33,18 +33,33 @@ function realtimeClock() {
 
 
 
+
 const themeToggle = document.getElementById('toggleDark');
 const body = document.body;
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
-
-    if(body.classList.contains('dark')){
+    
+    if (body.classList.contains('dark')) {
         themeToggle.classList = 'bi bi-brightness-high-fill';
-    }else{
+    } else {
         themeToggle.classList = 'bi bi-moon';
     }
+
+    // Store the user's color mode preference in local storage or cookies
+    const colorMode = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('colorMode', colorMode);
 });
+
+// Retrieve and apply the user's color mode preference when the page loads
+const storedColorMode = localStorage.getItem('colorMode');
+if (storedColorMode === 'dark') {
+    body.classList.add('dark');
+    themeToggle.classList = 'bi bi-brightness-high-fill';
+} else {
+    body.classList.remove('dark');
+    themeToggle.classList = 'bi bi-moon';
+}
 
 
 

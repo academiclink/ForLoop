@@ -30,31 +30,51 @@ body {
 }
 
 /* why preloader simply*/
-#preloader {
+.preloader {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-color); /* Background color of preloader */
+    background-color: var(--bg-color); /* Dark semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999; /* Ensure it appears above other content */
 }
 
-#loader {
-    border: 4px solid #3498db; /* Loading animation style */
-    border-top: 4px solid #e74c3c; /* Loading animation style */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite; /* Loading animation */
+.loader {
+    display: flex;
+    align-items: center;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.bars {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
 }
 
+.bars:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+
+.bars:nth-child(3) {
+    animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+    20% {
+        background-color: var(--text-color);
+        transform: scaleY(1.5);
+    }
+
+    40% {
+        transform: scaleY(1);
+    }
+}
 
 
 
