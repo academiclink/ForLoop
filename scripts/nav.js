@@ -7,3 +7,20 @@ window.onload = function() {
 
     });
 }
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("is-active");
+    navMenu.classList.toggle("is-active");
+})
+
+/*
+// script.js
+window.onload = function() {
+    // Hide the preloader when the webpage content is fully loaded
+    var preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+}
+*/
