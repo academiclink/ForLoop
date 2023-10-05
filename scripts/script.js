@@ -51,9 +51,10 @@ if (storedColorMode === 'dark') {
     themeToggle.classList = 'bi bi-moon';
 }  
 
-
-
-
+// footer code
+const footerArea = document.getElementsByClassName("footer")[0];
+let curYear = new Date();
+footerArea.innerHTML = "Copyright &copy " + curYear.getFullYear() + " AcademicLink. All rights reserverd";
 
 
 
